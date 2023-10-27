@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { render } from "react-dom";
+import { CroctProvider } from "@croct/plug-react";
+import { HeroBanner } from "./HeroBanner";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CroctProvider appId="716bf7eb-3299-4fe2-a49d-9d84972220f6">
+      <div>
+        <HeroBanner />
+      </div>
+    </CroctProvider>
   );
 }
 
-export default App;
+render(<App />, document.getElementById("root"));
